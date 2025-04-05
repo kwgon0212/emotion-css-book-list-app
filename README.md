@@ -13,11 +13,10 @@
 ## 🚀 주요 기능
 
 - 📖 Google Books API를 활용한 도서 검색
-- 🌓 다크/라이트 모드 테마 지원
 - 💅 Emotion CSS를 활용한 스타일링
-- 📱 반응형 디자인
+- 🌓 다크/라이트 모드 테마
 
-## 🎨 Emotion CSS의 장점
+## 🎨 Emotion CSS
 
 ### 1. 컴포넌트 스코프 CSS
 
@@ -44,10 +43,6 @@
 - 테마 시스템을 통한 일관된 디자인 시스템 구축
 
 ## 🎯 테마 적용법
-
-emotion css를 쓰면서 테마 적용에 있어 굉장히 편리하다는 것을 느낌
-
-아래는 테마를 적용한 코드
 
 ### 테마 정의
 
@@ -108,3 +103,17 @@ const Component = () => {
   );
 };
 ```
+
+## 느낀점
+
+Emotion과 styled-components의 문법이 같다고 느껴져서 그런가 큰 차이는 잘 모르겠다.
+
+tailwind같은 유틸리티 클래스 스타일보다는 CSS-in-JS가 확실히 깔끔하기는 하나 편리성은 확실히 떨어지는 듯 하다..
+
+Emotion CSS를 사용해본 이유는 styled-components가 개발을 중단한다하고 유지보수만 한다는 소식이 있어서 사용해 본 것이다. (참고: https://opencollective.com/styled-components/updates/thank-you)
+
+또한 일부 기업 채용공고 JD를 보면 Emotion CSS를 사용하는 곳이 있길래 사용해봤다.
+
+사실상 React의 RSC가 나오면서 styled-components와 같은 CSS-in-JS를 채택하는 것은 권장하지 않는다고는 하는데...
+
+아직 내가 경험이 부족해서인지 CSS-in-JS를 채택하지 않는 이유는 잘 모르겠다.
