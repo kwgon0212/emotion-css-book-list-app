@@ -38,3 +38,69 @@ CSS-in-JS는 JavaScript 환경에서 CSS를 작성하는 방식입니다. 전통
 - 스타일 로직을 컴포넌트와 함께 관리
 - 재사용 가능한 스타일 컴포넌트 생성 용이
 - 테마 시스템을 통한 일관된 디자인 시스템 구축
+
+## 테마 적용법
+
+emotion css를 쓰면서 테마 적용에 있어 굉장히 편리하다는 것을 느낌
+
+아래는 테마를 적용한 코드
+
+### 테마 정의
+
+```tsx
+// Theme.ts
+export interface Theme {
+  text: string;
+  background: string;
+}
+
+export const themeLight: Theme = {
+  text: "#000",
+  background: "#fff",
+};
+
+export const themeDark: Theme = {
+  text: "#fff",
+  background: "#121212",
+};
+```
+
+### 테마 적용
+
+```tsx
+// App.tsx
+import { ThemeProvider } from "@emotion/react";
+import { themeDark, themeLight } from "./components/Theme";
+
+function App() {
+  const [isDark, setIsDark] = useState(false);
+
+  return (
+    <ThemeProvider theme={isDark ? themeDark : themeLight}>
+      {/* 앱 컴포넌트 */}
+    </ThemeProvider>
+  );
+}
+```
+
+### 테마 사용
+
+```tsx
+// 컴포넌트에서 테마 사용
+import { useTheme } from "@emotion/react";
+
+const Component = () => {
+  const theme = useTheme();
+
+  return (
+    <div
+      css={css`
+        background-color: ${theme.background};
+        color: ${theme.text};
+      `}
+    >
+      테마가 적용된 컴포넌트
+    </div>
+  );
+};
+```
